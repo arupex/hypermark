@@ -35,3 +35,10 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+.idea/workspace.xml
+index.js
+package.json
+www/
+
+data/*
+.idea
