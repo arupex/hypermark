@@ -1,6 +1,6 @@
 {
   "name": "hypermark",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "performance and tracing",
   "main": "index.js",
   "bin": {
