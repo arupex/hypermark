@@ -1,0 +1,44 @@
+{
+  "name": "hypermark",
+  "version": "1.0.1",
+  "description": "performance and tracing",
+  "main": "index.js",
+  "bin": {
+    "hypermark": "./bin/server.js"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arupex/hypermark.git"
+  },
+  "keywords": [
+    "hyper",
+    "mark",
+    "performance",
+    "perform",
+    "logging",
+    "auditing",
+    "tracing",
+    "trace",
+    "audit",
+    "perf",
+    "analysis",
+    "tracer"
+  ],
+  "author": "dirwin517",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/arupex/hypermark/issues"
+  },
+  "homepage": "https://github.com/arupex/hypermark#readme",
+  "dependencies": {
+    "hyper-request": "^2.1.2",
+    "deep-value": "^1.0.4",
+    "deep-setter": "^1.0.1"
+  }
+}
