@@ -1,3 +1,4 @@
+'use strict';
 
 module.exports.UUID = require('./lib/UUID');
 module.exports.Tracer = require('./lib/Tracer');
