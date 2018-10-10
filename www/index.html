@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HyperMark</title>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/sankey.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <style>
+        body, html {
+            height:99%
+        }
+        div {
+            height:99%
+        }
+        table {
+            background: #EEEEEE;
+        }
+        .ftr {
+            height : 25%
+        }
+        ul, li {
+            /*margin: 0;*/
+            /*padding: 0.2em;*/
+            padding-top:0;
+            padding-bottom:0;
+            margin-top:0;
+            margin-bottom:0;
+        }
+
+        #container {
+            width:100%;
+            background-color : #505053;
+            position:absolute;
+        }
+
+        .highcharts-container  {
+            height : 800px !important
+        }
+
+        .highcharts-root {
+            height :  800px !important
+        }
+
+    </style>
+</head>
+<body>
+
+<div style="height: 100%;width: 100%" >
+
+    <table border="1" style="height: 100%;width: 100%">
+
+        <tr class="ftr" style="height:54px">
+            <td>
+
+                <span>
+                    <a href="http://hypermark.xyz">
+                    <img src="logo.png" style="width:48px;height:36px">
+                    <h1 style="display: inline">HyperMark</h1>
+                    </a>
+                </span>
+            </td>
+            <td>
+                <h2 style="display: inline">
+                    Selected: <div style="display: inline" id="funcName"></div>
+                </h2>
+            </td>
+        </tr>
+        <tr class="ftr" >
+            <td rowspan="100" style="width:15%">
+                <div id="tree"></div>
+            </td>
+
+            <td style="width: 100px">HTTP</td>
+            <td style="background: #EEEEEE;">
+                <div id="http"></div>
+            </td>
+            <td rowspan="5" style="width:40%">
+                <div id="display" style="white-space: pre;">
+
+
+                </div>
+            </td>
+        </tr>
+        <tr class="ftr" >
+            <td style="width: 100px">Logs</td>
+            <td style="background: #DDDDDD;">
+                <div id="logs"></div>
+            </td>
+        </tr>
+        <tr class="ftr" >
+            <td style="width: 100px">Traces</td>
+            <td style="background: #BBBBBB;">
+                <div id="trace"></div>
+            </td>
+        </tr>
+
+        <tr class="ftr" >
+            <td style="width: 100px">Meters</td>
+            <td style="background: #BBBBBB;">
+                <div id="meters"></div>
+            </td>
+        </tr>
+
+        <tr class="ftr" >
+            <td style="width: 100px">Dependencies</td>
+            <td style="background: #AAAAAA;">
+                <div id="dependencies"></div>
+            </td>
+        </tr>
+
+
+        <tr class="ftr">
+            <td style="width: 100px">True Calls</td>
+            <td style="background: #AAAAAA;" colspan="2">
+                <div id="true_calls">
+                    <button onclick="reset()">RESET</button>
+                    <!--<button onclick="start()">START</button>-->
+                    <div id="true_calls_display"></div>
+
+                </div>
+            </td>
+        </tr>
+
+
+
+    </table>
+
+</div>
+
+
+<script
+        src="app.js"
+        type="application/javascript">
+</script>
+
+</body>
+</html>
