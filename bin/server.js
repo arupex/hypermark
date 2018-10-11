@@ -20,7 +20,7 @@ let openByPlatform = {
 const drr = `${process.cwd()}/hypermarkData`;
 
 spawnSync('mkdir', ['-p', `${drr}`]);
-spawnSync('rm', ['-rf', `${drr}/*`]);
+spawnSync('rm', ['-rf', `${drr}/*.json`]);
 
 
 let clients = [];
