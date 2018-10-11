@@ -28,7 +28,7 @@ let clients = [];
 let endpoints = {
 
     'POST /api/v1/analytic' : (req, res, body) => {
-        writeFile(`${drr}/${Date.now()}.json`, body, 'utf8');
+        writeFile(`${drr}/${Date.now()}.json`, JSON.stringify(JSON.parse(body), null, 3), 'utf8');
         writeToClients(res, body);
     },
 
