@@ -105,7 +105,7 @@ let server = http.createServer((req, res) => {
                 return;
             }
 
-            return readFile(`../www/${file}`, 'utf8', (err, data) => {
+            return readFile(`${__dirname}/../www/${file}`, 'utf8', (err, data) => {
                 if (err) {
                     return res.end(JSON.stringify({
                         err : err.message,
