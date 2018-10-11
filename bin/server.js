@@ -95,7 +95,7 @@ let server = http.createServer((req, res) => {
             }
 
             if(!/\.css|\.html|\.js|\.htm|\.json/.test(file)) {
-                readFile(`../www/${file}`, (err, data) => {
+                readFile(`${__dirname}/../www/${file}`, (err, data) => {
                     if (err) {
                         return res.end();
                     }
