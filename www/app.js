@@ -112,7 +112,9 @@ function reDraw() {
 
     });
 
-    loadSession(lastCall.funcName, lastCall.sessionId)();
+    if(lastCall) {
+        loadSession(lastCall.funcName, lastCall.sessionId)();
+    }
 
 }
 
