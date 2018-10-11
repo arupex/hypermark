@@ -38,7 +38,7 @@ let endpoints = {
 
     'GET /api/v1/data' : (req, res, body) => {
 
-        let filesIndDir = dir(drr).map( e => require(`${drr}/${e}`));
+        let filesIndDir = dir(drr).map( e => {try {require(`${drr}/${e}`)}catch(e){return null;}}).filter(e=>e);
         req.socket.setTimeout(2147483647);
 
         res.writeHead(200, {
