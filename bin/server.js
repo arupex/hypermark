@@ -29,7 +29,11 @@ let endpoints = {
 
     'POST /api/v1/analytic' : (req, res, body) => {
         writeFile(`${drr}/${Date.now()}.json`, JSON.stringify(JSON.parse(body), null, 3), 'utf8');
-        writeToClients(res, body);
+
+        res.statusCode = 200;
+        res.end(JSON.stringify({ code : 200, message : 'ok'}));
+
+        writeToClients(body);
     },
 
     'GET /api/v1/data' : (req, res, body) => {
@@ -46,14 +50,17 @@ let endpoints = {
 
         res.write('data:'+JSON.stringify(filesIndDir) + '\n\n');
 
-        clients.push(req);
+        clients.push(res);
     },
 
 };
 
-function writeToClients (res, data) {
+function writeToClients (data) {
     const s = (typeof data === 'string'?data:JSON.stringify(data) );
-    res.write('data:'+ s + '\n\n')
+
+    clients.forEach((client) => {
+        client.write('data:'+ s + '\n\n')
+    });
 }
 
 let endpointNames = Object.keys(endpoints);
@@ -78,9 +85,12 @@ let server = http.createServer((req, res) => {
         // disconnectClient(req);
     });
 
+    res.on('end', () => {
+        disconnectClient(res);
+    });
+
     req.on('end', () => {
 
-        disconnectClient(req);
         body = body.join('');
 
         if(findUrl) {
